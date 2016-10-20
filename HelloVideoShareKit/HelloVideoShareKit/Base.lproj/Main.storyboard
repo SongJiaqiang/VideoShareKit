@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +18,65 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyJ-sN-Jp9">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="eCa-kK-Ciw"/>
+                                </constraints>
+                                <state key="normal" title="Selfie Video"/>
+                                <connections>
+                                    <action selector="selfieButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p73-1Z-8fc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gv-ex-NLI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="W58-1M-mN4"/>
+                                </constraints>
+                                <state key="normal" title="Pick from Album"/>
+                                <connections>
+                                    <action selector="pickButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z3R-cs-bZz"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="show video info" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J9n-8s-h6m" userLabel="videoInfoView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="J9n-8s-h6m" secondAttribute="height" multiplier="1:1" id="ks5-Ec-TvU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UU-ql-H5e">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gMe-dm-QfY"/>
+                                    <constraint firstAttribute="width" constant="80" id="ijw-VR-4mg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="782-dE-02Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="J9n-8s-h6m" secondAttribute="trailing" id="0r2-hB-Xrh"/>
+                            <constraint firstItem="TyJ-sN-Jp9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4te-01-xhU"/>
+                            <constraint firstItem="8Gv-ex-NLI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BxY-KS-7EC"/>
+                            <constraint firstAttribute="trailing" secondItem="3UU-ql-H5e" secondAttribute="trailing" constant="10" id="I0l-gq-Coq"/>
+                            <constraint firstItem="J9n-8s-h6m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QPw-jm-5bQ"/>
+                            <constraint firstAttribute="trailing" secondItem="8Gv-ex-NLI" secondAttribute="trailing" id="RDv-cV-Iwk"/>
+                            <constraint firstItem="3UU-ql-H5e" firstAttribute="bottom" secondItem="J9n-8s-h6m" secondAttribute="bottom" id="UzO-nc-Q4o"/>
+                            <constraint firstItem="J9n-8s-h6m" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-60" id="XOR-Bq-5ob"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8Gv-ex-NLI" secondAttribute="bottom" constant="40" id="bC9-Hh-XV2"/>
+                            <constraint firstAttribute="trailing" secondItem="TyJ-sN-Jp9" secondAttribute="trailing" id="hcv-B5-t0u"/>
+                            <constraint firstItem="8Gv-ex-NLI" firstAttribute="top" secondItem="TyJ-sN-Jp9" secondAttribute="bottom" id="uyl-rc-zYl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pickButton" destination="8Gv-ex-NLI" id="3MG-Ed-nJS"/>
+                        <outlet property="selfieButton" destination="TyJ-sN-Jp9" id="4xt-UR-Z9k"/>
+                        <outlet property="videoInfoView" destination="J9n-8s-h6m" id="cx9-pg-5oH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
